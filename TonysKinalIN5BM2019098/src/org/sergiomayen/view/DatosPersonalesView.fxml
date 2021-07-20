@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sergiomayen.controller.DatosPersonalesController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/FondoDatos.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="93.0" layoutY="113.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="132.0" text="Programador" />
+      <Button layoutX="93.0" layoutY="160.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="132.0" text="Administración" />
+   </children>
+</AnchorPane>

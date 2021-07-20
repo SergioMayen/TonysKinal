@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteServiciosFinal" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="648ee4f7-76ba-43c6-a14f-ab0e4acc009b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\sergi\\OneDrive\\Documents\\NetBeansProjects\\TonysKinalIN5BM2019098\\src\\org\\sergiomayen\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_ListarReporteServicios($P{id});
+]]>
+	</queryString>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionTipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="569" width="555" height="233" uuid="2580f710-b8c3-4804-b713-691dbdb314b3"/>
+				<imageExpression><![CDATA["C:\\Users\\sergi\\OneDrive\\Documents\\NetBeansProjects\\TonysKinalIN5BM2019098\\src\\org\\sergiomayen\\img\\backgraund.jpg"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="79" uuid="47865be3-0f3e-411d-a86f-af6a7d0d1b82"/>
+				<imageExpression><![CDATA["C:\\Users\\sergi\\OneDrive\\Documents\\NetBeansProjects\\TonysKinalIN5BM2019098\\src\\org\\sergiomayen\\img\\Titulo de verdad.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToBandHeight" x="11" y="10" width="69" height="58" uuid="ba04fd1c-3215-4754-91cc-b0bb5e5a5457"/>
+				<imageExpression><![CDATA["C:\\Users\\sergi\\OneDrive\\Documents\\NetBeansProjects\\TonysKinalIN5BM2019098\\src\\org\\sergiomayen\\img\\LogoTonysKinal.PNG"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="34" width="100" height="20" uuid="4a530573-3faf-459d-9e34-473ca64ef1d1"/>
+				<textElement>
+					<font fontName="Book Antiqua" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tony's Kinal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="44" width="572" height="35" uuid="b50f3b83-7d47-4c34-a305-a75f4cd15fdc"/>
+				<textElement>
+					<font fontName="Book Antiqua" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                                       Reporte de Servicios]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="67" splitType="Stretch">
+			<subreport>
+				<reportElement x="11" y="0" width="180" height="67" uuid="b6ed6816-c030-4803-a3b0-dad5922acc6e"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "SubReporteServicios.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="2" width="100" height="20" uuid="c9e06b3c-9064-4450-8612-faaa1fc827dd"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="0" width="100" height="20" uuid="b8aafd18-5f11-432e-b822-08ce2fd9640f"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="2" width="161" height="20" uuid="607aa748-44ae-48af-afde-dffa62554571"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion de Tipo de plato]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="51" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="0" width="100" height="20" uuid="7a6cc6d9-42ce-406c-b412-a6108121ac9a"/>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="0" width="100" height="20" uuid="8162d7ad-8124-4ae1-a23c-7b4e12152a60"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="0" width="100" height="20" uuid="77175596-488a-4cfa-ac2d-e268889e2f39"/>
+				<textFieldExpression><![CDATA[$F{descripcionTipo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="32" width="555" height="1" uuid="b21fe060-e06b-4b86-9b9f-8ae0d349c28c"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

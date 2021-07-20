@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sergiomayen.controller.PresupuestoController">
+   <children>
+      <Button fx:id="btnNuevo" layoutX="31.0" layoutY="352.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="91.0" layoutY="352.0" mnemonicParsing="false" onAction="#eliminarPresupuesto" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="154.0" layoutY="352.0" mnemonicParsing="false" onAction="#editarEmpresa" prefHeight="25.0" prefWidth="59.0" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="220.0" layoutY="352.0" mnemonicParsing="false" text="Reporte" />
+      <TableView fx:id="tblPresupuesto" layoutX="18.0" layoutY="226.0" onMouseClicked="#seleccionarElemento" prefHeight="116.0" prefWidth="564.0">
+        <columns>
+          <TableColumn fx:id="colCodigoPresupuesto" prefWidth="155.0" text="Codigo Presupuesto" />
+          <TableColumn fx:id="colFechaSolicitud" prefWidth="121.0" text="Fecha de Solicitud" />
+            <TableColumn fx:id="colCantidadPresupuesto" prefWidth="164.0" text="Cantidad Preupuestada" />
+            <TableColumn fx:id="colCodigoEmpresa" prefWidth="123.0" text="Codigo Empresa" />
+        </columns>
+      </TableView>
+      <Label layoutX="226.0" layoutY="14.0" prefHeight="17.0" prefWidth="149.0" text="Presupuesto">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="9.0" layoutY="73.0" prefHeight="90.0" prefWidth="583.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Codigo Presupuesto">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Label text="Cantidad Preupuestada" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Label text="Codigo Empresa " GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label text="Fecha de Solicitud" GridPane.columnIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <TextField fx:id="txtCodigoPresupuesto" GridPane.columnIndex="1" />
+            <TextField fx:id="txtCantidadPresupuesto" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbCodigoEmpresa" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <GridPane fx:id="grpFechaSolicitud" GridPane.columnIndex="3">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

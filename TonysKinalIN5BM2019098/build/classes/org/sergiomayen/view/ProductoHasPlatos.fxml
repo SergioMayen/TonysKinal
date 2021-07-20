@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="358.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sergiomayen.controller.ProductoHasPlatosController">
+   <children>
+      <Pane layoutX="6.0" layoutY="77.0" prefHeight="89.0" prefWidth="589.0" style="-fx-background-color: #0E0D1D;" />
+      <Pane layoutX="5.0" layoutY="3.0" prefHeight="71.0" prefWidth="591.0" style="-fx-background-color: #0A0A0A;" />
+      <Pane layoutX="7.0" layoutY="171.0" prefHeight="182.0" prefWidth="589.0" style="-fx-background-color: #0E0D1D;" />
+      <GridPane layoutX="116.0" layoutY="93.0" prefHeight="54.0" prefWidth="331.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ComboBox fx:id="cmbCodigoProducto" prefWidth="150.0" GridPane.columnIndex="1" />
+            <ComboBox fx:id="cmbCodigoPlato" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="114.0" text="Código Productos" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Código Platos" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Label layoutX="188.0" layoutY="25.0" text="Productos Has Platos" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblProdutoHasPlatos" layoutX="91.0" layoutY="179.0" prefHeight="164.0" prefWidth="427.0">
+        <columns>
+          <TableColumn fx:id="colCodigoProducto" prefWidth="221.0" text="Código Productos" />
+          <TableColumn fx:id="colCodigoPlatos" prefWidth="213.0" text="Código Platos" />
+        </columns>
+      </TableView>
+      <Button layoutX="24.0" layoutY="27.0" mnemonicParsing="false" onAction="#menuPrincipal" style="-fx-background-color: #0A0A0A;" text="Atras" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
